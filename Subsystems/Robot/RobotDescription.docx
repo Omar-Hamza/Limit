@@ -1,0 +1,6 @@
+﻿Controller
+
+This the component that translates the actions taken by the user on the interface to robot commands and ensures that the robot state is valid , you are free to determine how to implement that but a very simple version of that is having a simple state machine that looks like following:
+
+The controller should also receive the state of the robot and send it back to the interface controller
+
