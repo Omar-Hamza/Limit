@@ -1,9 +1,9 @@
 
 let NUM_PARTICLES = ( ( ROWS = 50 ) * ( COLS = 50 ) ),
     THICKNESS = Math.pow( 20, 2 ),
-    SPACING = 100,
-    MARGIN = 155, // Set the fixed margin value
-    COLOR = 250,
+    SPACING = 0,
+    MARGIN = 0, // Set the fixed margin value
+    COLOR = 0,
     DRAG = 0.9,
     EASE = 0.5,
     circlecontainer,
@@ -46,10 +46,12 @@ function init() {
   list = [];
 
   // Set the fixed size and position of the circlecontainer
-  circlecontainer.style.width = "500px";
-  circlecontainer.style.height = "500px";
+  circlecontainer.style.width = "150px";
+  circlecontainer.style.height = "150px";
   circlecontainer.style.cursor = "pointer";
-
+  circlecontainer.style.position = "absolute";
+  circlecontainer.style.top = "450px";
+  circlecontainer.style.left = "-20px";
 
   SPACING = (circlecontainer.offsetWidth - MARGIN * 2) / COLS;
   w = canvas.width = COLS * SPACING + MARGIN * 2;
@@ -85,8 +87,8 @@ function init() {
 function step() {
   if(tog){
     if ( !isDragging) {
-      mx = 250;
-      my = 250;
+      mx = 70;
+      my = 70;
     }
       
     for ( i = 0; i < NUM_PARTICLES; i++ ) {
@@ -98,9 +100,9 @@ function step() {
         t = Math.atan2( dy, dx );
         p.vx += f * Math.cos(t);
         p.vy += f * Math.sin(t);
-        p.c1 = 50; // color
-        p.c2 = 200;
-        p.c3 = 360;
+        p.c1 = 1; // color
+        p.c2 = 77;
+        p.c3 = 107;
       }
       else{       
         p.c1 = p.c2 = p.c3 = 100;
@@ -128,6 +130,9 @@ function step() {
   }
 
   requestAnimationFrame( step );
+}
+function rangeSlide(value) {
+  document.getElementById('rangeValue').innerHTML = value;
 }
 
 init();

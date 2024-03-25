@@ -1,29 +1,32 @@
 :root {
---main-bg: #131313;
---box-bg: #232323;
+--main-bg: #05080f;
+--box-bg: #302f2f;
 --name-color: #f8f8f8;
 --card-bg-text: #ffffff;
-
+background-image: url("bg.png");
+background-color: var(--main-bg);
 }
 
 body {
-position: absolute;
-top: 5%;
-left: 5%;
-justify-content: center;
-align-items: center;
-background: var(--main-bg);
-}
+  position:absolute ;
+  left: 50vw;
+  top: 50vh;
   
-.coords {
-    display: none;
+  transform: translate(-50%, -50%);
+  background-color: #05080f;
+
+  width: 320px;
+  height: 750px;
+  border-radius: 50px;
 }
 
 
 .startcontainer {
-    width: 6em;
-    height: 6em;
     position: absolute;
+    left: 110px;
+    top: 10px;
+    width: 100px;
+    height: 100px;
   }
   .startbutton {
     width: 100%;
@@ -91,450 +94,137 @@ background: var(--main-bg);
     }
   }
 
-
-/* ---------------------------------------------------------------------------------- */
-
-
-  .btn-conteiner-left {
-      display: flex;
-    --color-text: #9ee5fa;
-    --color-background: #353535;
-    --color-outline: #9ee5fa80;
-    --color-shadow: #00000080;
-    transform: rotate(180deg);
-
-  }
-  
-  .btn-content-left {
-    position: relative;
-    top: 0;
-    left: 0;
-    align-items: center;
-    padding: 6px 6px;
-    text-decoration: none;
-    font-family: "Poppins", sans-serif;
-    font-size: 25px;
-    color: var(--color-text);
-    background: var(--color-background);
-    transition: 1s;
-    border-radius: 100px;
-    box-shadow: 0 0 0.2em 0 var(--color-background);
-  }
-  
-  .btn-content-left:hover,
-  .btn-content-left:focus {
-    transition: 0.5s;
-    -webkit-animation: btn-content 1s;
-    animation: btn-content 1s;
-    outline: 0.1em solid transparent;
-    outline-offset: 0.2em;
-    box-shadow: 0 0 0.4em 0 var(--color-background);
-  }
-  
-  .btn-content-left .icon-arrow {
-    transition: 0.5s;
-    margin-left: 0px;
-    transform: scale(0.6);
-  }
-  
-  .btn-content-left:hover .icon-arrow {
-    transition: 0.5s;
-    margin-left: 25px;
-  }
-  
-  .icon-arrow {
-    width: 20px;
-    margin-left: 15px;
-    position: relative;
-    top: 6%;
-  }
-  
-  /* SVG */
-  #arrow-icon-one {
-    transition: 0.4s;
-    transform: translateX(-60%);
-  }
-  
-  #arrow-icon-two {
-    transition: 0.5s;
-    transform: translateX(-30%);
-  }
-  
-  .btn-content-left:hover #arrow-icon-three {
-    animation: color_anim 1s infinite 0.2s;
-  }
-  
-  .btn-content-left:hover #arrow-icon-one {
-    transform: translateX(0%);
-    animation: color_anim 1s infinite 0.6s;
-  }
-  
-  .btn-content-left:hover #arrow-icon-two {
-    transform: translateX(0%);
-    animation: color_anim 1s infinite 0.4s;
-  }
-  
-  /* SVG animations */
-  @keyframes color_anim {
-    0% {
-      fill: white;
-    }
-  
-    50% {
-      fill: var(--color-background);
-    }
-  
-    100% {
-      fill: #9ee5fa;
-    }
-  }
-  
-  /* Button animations */
-  @-webkit-keyframes btn-content-left {
-    0% {
-      outline: 0.2em solid var(--color-background);
-      outline-offset: 0;
-    }
-  }
-  
-  @keyframes btn-content-left {
-    0% {
-      outline: 0.2em solid var(--color-background);
-      outline-offset: 0;
-    }
-  }
-  
-
-
-/* ---------------------------------------------------------------------------------------------------------------- */
- 
-  .btn-conteiner-right {
-    display: flex;
-  --color-text: #9ee5fa;
-  --color-background: #353535;
-  --color-outline: #9ee5fa80;
-  --color-shadow: #00000080;
+.Buttons {
+  position: absolute;
+  top: 50px;
+  left: 10px;
+}
+.left {
+  position: absolute;
+  left: -85px;
+  top: 190px;
+  border-top: 35px solid transparent;
+  border-bottom: 35px solid transparent;
+  border-left: 65px solid #0e4d6b;
+  border-right: 0;
+  background-color: #05080f;
+  rotate: 180deg;
+}
+.left:active{
+  scale: 1.2;
+}
+.right {
+  position: absolute;
+  left: 85px;
+  top: 190px;
+  border-top: 35px solid transparent;
+  border-bottom: 35px solid transparent;
+  border-left: 65px solid #0e4d6b;
+  border-right: 0;
+  background-color: #05080f;
+  rotate: 0deg;
+}
+.right:active{
+  scale: 1.2;
 }
 
-.btn-content-right {
-  position: relative;
-  top: 20rem;
-  left: 50rem;
-  align-items: center;
-  padding: 6px 6px;
-  text-decoration: none;
-  font-family: "Poppins", sans-serif;
-  font-size: 25px;
-  color: var(--color-text);
-  background: var(--color-background);
-  transition: 1s;
-  border-radius: 100px;
-  box-shadow: 0 0 0.2em 0 var(--color-background);
+.down {
+  position: absolute;
+  left: 0;
+  top: 280px;
+  border-top: 35px solid transparent;
+  border-bottom: 35px solid transparent;
+  border-left: 65px solid #0e4d6b;
+  border-right: 0;
+  background-color: #05080f;
+  rotate: 90deg;
+}
+.down:active{
+  scale: 1.2;
+}
+.up {
+  position: absolute;
+  left: 0;
+  top: 100px;
+  border-top: 35px solid transparent;
+  border-bottom: 35px solid transparent;
+  border-left: 65px solid #0e4d6b;
+  border-right: 0;
+  background-color: #05080f;
+  rotate: -90deg;
+}
+.up:active{
+  scale: 1.2;
 }
 
-.btn-content-right:hover,
-.btn-content-right:focus {
-  transition: 0.5s;
-  -webkit-animation: btn-content 1s;
-  animation: btn-content 1s;
-  outline: 0.1em solid transparent;
-  outline-offset: 0.2em;
-  box-shadow: 0 0 0.4em 0 var(--color-background);
+.ldo {
+  position: absolute;
+  left: -80px;
+  top: 270px;
+  border-top: 35px solid transparent;
+  border-bottom: 35px solid transparent;
+  border-left: 65px solid #0e4d6b;
+  border-right: 0;
+  background-color: #05080f;
+  rotate: 135deg;
+  scale: 0.75;
+}
+.ldo:active{
+  scale: 0.9;
+}
+.rup {
+  position: absolute;
+  left: 80px;
+  top: 120px;
+  border-top: 35px solid transparent;
+  border-bottom: 35px solid transparent;
+  border-left: 65px solid #0e4d6b;
+  border-right: 0;
+  background-color: #05080f;
+  rotate: -45deg;
+  scale: 0.75;
+}
+.rup:active{
+  scale: 0.9;
 }
 
-.btn-content-right .icon-arrow {
-  transition: 0.5s;
-  margin-right: 0px;
-  transform: scale(0.6);
+.rdo {
+  position: absolute;
+  left: 80px;
+  top: 270px;
+  border-top: 35px solid transparent;
+  border-bottom: 35px solid transparent;
+  border-left: 65px solid #0e4d6b;
+  border-right: 0;
+  background-color: #05080f;
+  rotate: 45deg;
+  scale: 0.75;
+}
+.rdo:active{
+  scale: 0.9;
 }
 
-.btn-content-right:hover .icon-arrow {
-  transition: 0.5s;
-  margin-right: 25px;
+.lup {
+  position: absolute;
+  left: -80px;
+  top: 120px;
+  border-top: 35px solid transparent;
+  border-bottom: 35px solid transparent;
+  border-left: 65px solid #0e4d6b;
+  border-right: 0;
+  background-color: #05080f;
+  rotate: -135deg;
+  scale: 0.75;
 }
-
-.icon-arrow {
-  width: 20px;
-  margin-left: 15px;
-  position: relative;
-  top: 6%;
+.lup:active{
+  scale: 0.9;
 }
-
-/* SVG */
-#arrow-icon-one {
-  transition: 0.4s;
-  transform: translateX(-60%);
-}
-
-#arrow-icon-two {
-  transition: 0.5s;
-  transform: translateX(-30%);
-}
-
-.btn-content-right:hover #arrow-icon-three {
-  animation: color_anim 1s infinite 0.2s;
-}
-
-.btn-content-right:hover #arrow-icon-one {
-  transform: translateX(0%);
-  animation: color_anim 1s infinite 0.6s;
-}
-
-.btn-content-right:hover #arrow-icon-two {
-  transform: translateX(0%);
-  animation: color_anim 1s infinite 0.4s;
-}
-
-/* SVG animations */
-@keyframes color_anim {
-  0% {
-    fill: white;
-  }
-
-  50% {
-    fill: var(--color-background);
-  }
-
-  100% {
-    fill: #9ee5fa;
-  }
-}
-
-/* Button animations */
-@-webkit-keyframes btn-content-right {
-  0% {
-    outline: 0.2em solid var(--color-background);
-    outline-offset: 0;
-  }
-}
-
-@keyframes btn-content-right {
-  0% {
-    outline: 0.2em solid var(--color-background);
-    outline-offset: 0;
-  }
-}
-
-
-
-/* ---------------------------------------------------------------------------------------------------------------- */
- 
-.btn-conteiner-down {
-  display: flex;
---color-text: #9ee5fa;
---color-background: #353535;
---color-outline: #9ee5fa80;
---color-shadow: #00000080;
-transform: rotate(90deg);
-}
-
-.btn-content-down {
-position: relative;
-top: 20rem;
-left: 50rem;
-align-items: center;
-padding: 6px 6px;
-text-decoration: none;
-font-family: "Poppins", sans-serif;
-font-size: 25px;
-color: var(--color-text);
-background: var(--color-background);
-transition: 1s;
-border-radius: 100px;
-box-shadow: 0 0 0.2em 0 var(--color-background);
-}
-
-.btn-content-down:hover,
-.btn-content-down:focus {
-transition: 0.5s;
--webkit-animation: btn-content 1s;
-animation: btn-content 1s;
-outline: 0.1em solid transparent;
-outline-offset: 0.2em;
-box-shadow: 0 0 0.4em 0 var(--color-background);
-}
-
-.btn-content-down .icon-arrow {
-transition: 0.5s;
-margin-right: 0px;
-transform: scale(0.6);
-}
-
-.btn-content-down:hover .icon-arrow {
-transition: 0.5s;
-margin-right: 25px;
-}
-
-.icon-arrow {
-width: 20px;
-margin-left: 15px;
-position: relative;
-top: 6%;
-}
-
-/* SVG */
-#arrow-icon-one {
-transition: 0.4s;
-transform: translateX(-60%);
-}
-
-#arrow-icon-two {
-transition: 0.5s;
-transform: translateX(-30%);
-}
-
-.btn-content-down:hover #arrow-icon-three {
-animation: color_anim 1s infinite 0.2s;
-}
-
-.btn-content-down:hover #arrow-icon-one {
-transform: translateX(0%);
-animation: color_anim 1s infinite 0.6s;
-}
-
-.btn-content-down:hover #arrow-icon-two {
-transform: translateX(0%);
-animation: color_anim 1s infinite 0.4s;
-}
-
-/* SVG animations */
-@keyframes color_anim {
-0% {
-  fill: white;
-}
-
-50% {
-  fill: var(--color-background);
-}
-
-100% {
-  fill: #9ee5fa;
-}
-}
-
-/* Button animations */
-@-webkit-keyframes btn-content-down {
-0% {
-  outline: 0.2em solid var(--color-background);
-  outline-offset: 0;
-}
-}
-
-@keyframes btn-content-down {
-0% {
-  outline: 0.2em solid var(--color-background);
-  outline-offset: 0;
-}
-}
-
-
-
-
-/* ---------------------------------------------------------------------------------------------------------------- */
- 
-.btn-conteiner-up {
-  display: flex;
---color-text: #9ee5fa;
---color-background: #353535;
---color-outline: #9ee5fa80;
---color-shadow: #00000080;
-}
-
-.btn-content-up {
-position: relative;
-top: 20rem;
-left: 50rem;
-align-items: center;
-padding: 6px 6px;
-text-decoration: none;
-font-family: "Poppins", sans-serif;
-font-size: 25px;
-color: var(--color-text);
-background: var(--color-background);
-transition: 1s;
-border-radius: 100px;
-box-shadow: 0 0 0.2em 0 var(--color-background);
-}
-
-.btn-content-up:hover,
-.btn-content-up:focus {
-transition: 0.5s;
--webkit-animation: btn-content 1s;
-animation: btn-content 1s;
-outline: 0.1em solid transparent;
-outline-offset: 0.2em;
-box-shadow: 0 0 0.4em 0 var(--color-background);
-}
-
-.btn-content-up .icon-arrow {
-transition: 0.5s;
-margin-right: 0px;
-transform: scale(0.6);
-}
-
-.btn-content-up:hover .icon-arrow {
-transition: 0.5s;
-margin-right: 25px;
-}
-
-.icon-arrow {
-width: 20px;
-margin-left: 15px;
-position: relative;
-top: 6%;
-}
-
-/* SVG */
-#arrow-icon-one {
-transition: 0.4s;
-transform: translateX(-60%);
-}
-
-#arrow-icon-two {
-transition: 0.5s;
-transform: translateX(-30%);
-}
-
-.btn-content-up:hover #arrow-icon-three {
-animation: color_anim 1s infinite 0.2s;
-}
-
-.btn-content-up:hover #arrow-icon-one {
-transform: translateX(0%);
-animation: color_anim 1s infinite 0.6s;
-}
-
-.btn-content-up:hover #arrow-icon-two {
-transform: translateX(0%);
-animation: color_anim 1s infinite 0.4s;
-}
-
-/* SVG animations */
-@keyframes color_anim {
-0% {
-  fill: white;
-}
-
-50% {
-  fill: var(--color-background);
-}
-
-100% {
-  fill: #9ee5fa;
-}
-}
-
-/* Button animations */
-@-webkit-keyframes btn-content-up {
-0% {
-  outline: 0.2em solid var(--color-background);
-  outline-offset: 0;
-}
-}
-
-@keyframes btn-content-up {
-0% {
-  outline: 0.2em solid var(--color-background);
-  outline-offset: 0;
-}
+.range {
+  width: 400px;
+  height: 15px;
+  background: #000000;
+  outline: none;
+  border-radius: 15px;
+  overflow: hidden;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 1);
 }
