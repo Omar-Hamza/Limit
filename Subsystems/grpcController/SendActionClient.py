@@ -20,7 +20,7 @@ def sendAction(Action):
         print("Error sending action:", e)
         return "Error"
 
-@app.route('../../grpcController/', methods=['POST'])
+@app.route('call_python_function', methods=['POST'])
 def call_python_function():
     try:
         data = request.get_json()
