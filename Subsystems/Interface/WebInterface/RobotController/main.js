@@ -131,9 +131,6 @@ function step() {
 
   requestAnimationFrame( step );
 }
-function rangeSlide(value) {
-  document.getElementById('rangeValue').innerHTML = value;
-}
 
 init();
 step();

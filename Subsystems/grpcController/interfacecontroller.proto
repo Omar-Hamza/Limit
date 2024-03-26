@@ -1,0 +1,16 @@
+syntax = "proto3";
+
+
+package robotcontroller;
+
+service webinterface {
+  rpc SendAction (actionRequest) returns (actionReply) {}
+}
+
+message actionRequest {
+  string name = 1;
+}
+
+message actionReply {
+  string message = 1;
+}

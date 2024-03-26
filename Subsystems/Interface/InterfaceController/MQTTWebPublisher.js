@@ -1,5 +1,4 @@
 
-
   // MQTT Broker configuration
   const brokerUrl = 'wss://mqtt.eclipseprojects.io:443/mqtt';
   const client = mqtt.connect(brokerUrl);
@@ -15,17 +14,6 @@
   });
 
   // Function to publish action via MQTT
-  
-  function toggleAction()
-  {
-    const readyToggle = document.getElementById('readyToggle');
-    if (readyToggle.checked) {
-      toggleState = "on";
-    } else {
-      toggleState = "off";
-    }
-    sendAction(toggleState);
-  }
   
   function sendAction(action) {
     if (client.connected) {

@@ -219,12 +219,3 @@ body {
 .lup:active{
   scale: 0.9;
 }
-.range {
-  width: 400px;
-  height: 15px;
-  background: #000000;
-  outline: none;
-  border-radius: 15px;
-  overflow: hidden;
-  box-shadow: inset 0 0 5px rgba(0, 0, 0, 1);
-}

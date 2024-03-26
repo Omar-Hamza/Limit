@@ -13,7 +13,7 @@
 
     <div class="startcontainer">    
         <input id="checkbox" type="checkbox" />
-        <label class="startbutton" for="checkbox">
+        <label class="startbutton" for="checkbox" onclick="sendAction('stop')">
             <span class="icon">
             <svg
                 height="200px"
@@ -50,25 +50,22 @@
             </span>
         </label>
         <div class="Buttons">
-          <button class="right"></button>
-          <button class="left"></button>
-          <button class="up"></button>
-          <button class="down"></button>
-          <button class="rup"></button>
-          <button class="rdo"></button>
-          <button class="lup"></button>
-          <button class="ldo"></button>
+          <button class="right" onclick="sendAction('right')"></button>
+          <button class="left"  onclick="sendAction('left')"></button>
+          <button class="up"    onclick="sendAction('up')"></button>
+          <button class="down"  onclick="sendAction('down')"></button>
+          <button class="rup"   onclick="sendAction('rup')"></button>
+          <button class="rdo"   onclick="sendAction('rdo')"></button>
+          <button class="lup"   onclick="sendAction('lup')"></button>
+          <button class="ldo"   onclick="sendAction('ldo')"></button>
         </div>
-        <div id='circlecontainer' class="circle"></div>
-        <div>
-          <span id="rangeValue">0</span>
-          <Input class="range" type="range" name "" value="0" min="0" max="100" onChange="rangeSlide(this.value)" onmousemove="rangeSlide(this.value)"></Input>
-        </div>
-        
-      </div>
+        <div id='circlecontainer' class="circle"></div> 
+
+    </div>
 
     
     <script src="main.js"></script>
-
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/mqtt/4.2.7/mqtt.min.js"></script>
+    <script src="../../InterfaceController/MQTTWebPublisher.js"></script>
 </body>
 </html>
