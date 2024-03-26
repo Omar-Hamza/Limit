@@ -13,8 +13,12 @@
     console.log('MQTT broker Error:', error);
   });
 
-  // Function to publish action via MQTT
-  
+  /**
+   * Function to publish an action via MQTT.
+   * 
+   * @param {string} action - The action to be published via MQTT.
+   * @returns {void}
+   */
   function sendAction(action) {
     if (client.connected) {
       client.publish('robot/control', action);
@@ -23,5 +27,3 @@
       console.log('Not connected to MQTT broker');
     }
   }
-
-  
