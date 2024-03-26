@@ -1,27 +1,33 @@
-import logging
-
 import grpc
-import time
 import interfacecontroller_pb2
 import interfacecontroller_pb2_grpc
+from flask import Flask, request, jsonify
+from flask_cors import CORS  # Import Flask-CORS
 
-Acc = 25
-Action = "Forward" + str (Acc)
-def run():
-    # NOTE(gRPC Python Team): .close() is possible on a channel and should be
-    # used in circumstances in which the with statement does not fit the needs
-    # of the code.
-    print("Will try to send action to the server ...")
+app = Flask(__name__)
+CORS(app)  # Enable CORS for all routes
 
-    with grpc.insecure_channel("localhost:50051") as channel:
-        stub = interfacecontroller_pb2_grpc.webinterfaceStub(channel)
-        response = stub.SendAction(interfacecontroller_pb2.actionRequest(name=Action))
-    print("Greeter client received: " + response.message)
+def sendAction(Action):
+    try:
+        print("Will try to send action to the server ...")
 
+        with grpc.insecure_channel("localhost:50051") as channel:
+            stub = interfacecontroller_pb2_grpc.webinterfaceStub(channel)
+            response = stub.SendAction(interfacecontroller_pb2.actionRequest(name=Action))
+            print("Greeter client received: " + response.message)
+            return response.message  # Return the response message
+    except Exception as e:
+        print("Error sending action:", e)
+        return "Error"
 
-if __name__ == "__main__":
-    
-    while True:
-        logging.basicConfig()
-        run()
-        time.sleep(1)
+@app.route('/Subsystems/Interface/grpcpage/SendActionClient.py', methods=['POST'])
+def call_python_function():
+    try:
+        data = request.get_json()
+        result = sendAction('first')  # Call your Python function
+        return jsonify({'result': result})
+    except Exception as e:
+        return jsonify({'error': str(e)})
+
+if __name__ == '__main__':
+    app.run(debug=True)
