@@ -20,7 +20,7 @@ def sendAction(Action):
         print("Error sending action:", e)
         return "Error"
 
-@app.route('/Subsystems/Interface/grpcpage/SendActionClient.py', methods=['POST'])
+@app.route('../../grpcController/', methods=['POST'])
 def call_python_function():
     try:
         data = request.get_json()

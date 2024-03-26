@@ -7,7 +7,7 @@ function callPythonFunction(param) {
         body: JSON.stringify({ param }),
     };
 
-    return fetch('/Subsystems/Interface/grpcpage/SendActionClient.py', requestOptions)
+    return fetch('../../grpcController/', requestOptions)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
