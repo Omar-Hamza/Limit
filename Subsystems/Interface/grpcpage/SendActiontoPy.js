@@ -7,7 +7,7 @@ function callPythonFunction(param) {
         body: JSON.stringify({ param }),
     };
 
-    return fetch('../../grpcController/', requestOptions)
+    return fetch('/Subsystems/grpcController/call_python_function', requestOptions)
         .then(response => {
             if (!response.ok) {
                 throw new Error('Network response was not ok');
